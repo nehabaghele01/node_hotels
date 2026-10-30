@@ -265,7 +265,7 @@ app.get("/", (req, res) => {
   res.send("welcome to our hotel");
 });
 
-//import /person router file
+//import person router file 
 const personRoutes = require("./routes/personRoutes");
 const menuItemRoutes = require("./routes/menuItemRoutes");
 
