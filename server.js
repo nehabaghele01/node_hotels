@@ -255,6 +255,7 @@ const app = express();
 const db = require("./db");
 const Person = require("./models/Person");
 const MenuItem = require("./models/MenuItem");
+require('dotenv').config();
 
 //middleware(Take data from client and convert/parse into backend understandable format and store it into database)
 const bodyParser = require("body-parser");
@@ -273,7 +274,9 @@ const menuItemRoutes = require("./routes/menuItemRoutes");
 app.use("/person", personRoutes);
 app.use("/menu", menuItemRoutes);
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000; 
+
+app.listen(PORT, () => {
   //severs port no (room no)
   console.log("server is listening on PORT 3000");
 });
